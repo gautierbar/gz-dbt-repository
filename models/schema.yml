@@ -32,3 +32,12 @@ sources:
               column_name: orders_id
           - not_null:
               column_name: orders_id
+  - name: dbt_gautier
+    tables:
+      - name: finance_days
+        tests:
+          - unique:
+              column_name: date_date
+          - not_null:
+              column_name: date_date
+
