@@ -4,6 +4,7 @@ WITH kpi_ship AS(
     SELECT  
         om.orders_id AS orders_id
         ,om.date_date AS date_date
+        ,om.revenue AS revenue
         ,om.margin AS margin
         ,sh.shipping_fee AS shipping_fee
         ,CAST(sh.ship_cost AS FLOAT64) AS ship_cost
