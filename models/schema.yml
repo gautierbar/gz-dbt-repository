@@ -3,14 +3,29 @@ version: 2
 sources:
   - name: raw
     schema: gz_raw_data
-    description: "raw data from gz"
+    description: raw data from gz
     tables:
       - name: sales
         identifier: raw_gz_sales
-        description: "all sales from gz"
+        description: all sales from gz
+        tests:
+          - unique:
+              column_name: "(orders_id || '-' || pdt_id)"
+          - not_null:
+              column_name: "(orders_id || '-' || pdt_id)"
       - name: product
         identifier: raw_gz_product
-        description: "all products from gz"
+        description: all products from gz
+        tests:
+          - unique:
+              column_name: products_id
+          - not_null:
+              column_name: products_id
       - name: ship
         identifier: raw_gz_ship
-        description: "all shipments from gz"
+        description: all shipments from gz
+        tests:
+          - unique:
+              column_name: orders_id
+          - not_null:
+              column_name: orders_id
