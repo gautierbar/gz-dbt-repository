@@ -10,3 +10,5 @@ FROM
     {{ ref('finance_campaigns_day') }}
 GROUP BY 
     datemonth
+ORDER BY 
+    datemonth DESC
