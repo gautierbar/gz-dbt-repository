@@ -26,5 +26,6 @@ FROM
 SELECT 
     *,
     ROUND(revenue - purchase_cost, 2) AS margin
+    ,{{margin_percent(revenue, purchase_cost)}} AS margin_percent
 FROM 
     sales_purchase_cost
