@@ -54,6 +54,9 @@ sources:
       - name: facebook
         identifier: raw_gz_facebook
         description: facebook campaigns data
+        tests:
+          - unique:
+              column_name: "(date_date|| '-' || campaign_key)"
   - name: dbt_gautier
     tables:
       - name: finance_days
@@ -61,6 +64,6 @@ sources:
           - unique:
               column_name: date_date
           - not_null:
-              column_name: date_date`
+              column_name: date_date
 
 
