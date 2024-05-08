@@ -15,7 +15,14 @@ sources:
           - unique:
               column_name: "(orders_id || '-' || pdt_id)"
           - not_null:
-              column_name: "(orders_id || '-' || pdt_id)"
+              column_name:
+                - orders_id
+                - products_id
+                - margin
+                - purchase_cost
+                - date_date
+                - revenue
+                - quantity
       - name: product
         identifier: raw_gz_product
         description: all products from gz
