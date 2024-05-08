@@ -39,6 +39,21 @@ sources:
               column_name: orders_id
           - not_null:
               column_name: orders_id
+      - name: adwords
+        identifier: raw_gz_adwords
+        description: adwords campaigns data
+        tests:
+          - unique:
+              column_name: "(date_date|| '-' || campaign_key)"
+      - name: bing
+        identifier: raw_gz_bing
+        description: bing campaigns data
+      - name: criteo
+        identifier: raw_gz_criteo
+        description: criteo campaigns data
+      - name: facebook
+        identifier: raw_gz_facebook
+        description: facebook campaigns data
   - name: dbt_gautier
     tables:
       - name: finance_days
@@ -46,5 +61,6 @@ sources:
           - unique:
               column_name: date_date
           - not_null:
-              column_name: date_date
+              column_name: date_date`
+
 

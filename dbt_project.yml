@@ -40,8 +40,6 @@ models:
     # Applies to all files under models/example/
     example:
       +materialized: table
-<<<<<<< HEAD
-=======
     staging:
       +materialized: view
     intermediate:
@@ -50,4 +48,3 @@ models:
       +materialized: table
       finance:
         schema: finance
->>>>>>> 8ce7e9de0731f3be45d600090e49539e318e3c3b
